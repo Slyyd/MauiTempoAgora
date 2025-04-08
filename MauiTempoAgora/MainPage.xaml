@@ -6,35 +6,37 @@
 
     <StackLayout Padding="10" Spacing="10" HorizontalOptions="Fill">
 
-        <Label Text="Digite a cidade:" HorizontalOptions="CenterAndExpand"/>
+        <Button x:Name="btn_localizacao" Text="Usar localização atual" Clicked="btn_localizacao_Clicked"/>
+        <Label Text="OU" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" Margin="10"/>
+        <Label Text="Digitar a cidade:" HorizontalOptions="CenterAndExpand"/>
         <Entry x:Name="ent_cidade" Placeholder="São Paulo"/>
-        <Button x:Name="btn_previsao" Text="Previsão do tempo" Clicked="btn_previsao_Clicked"/>
+        <Button x:Name="btn_previsao" Text="Pesquisar previsão do empo" Clicked="btn_previsao_Clicked"/>
 
         <Frame VerticalOptions="FillAndExpand" BackgroundColor="#181818">
             <!--Mostra as datas!-->
             <ScrollView>
                 <StackLayout Spacing="10">
-                <Label Text="Descrição" HorizontalOptions="CenterAndExpand" FontSize="30" FontAttributes="Bold"/>
-                <Label Text="{Binding description}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                    <Label Text="Descrição" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="{Binding description}" HorizontalOptions="CenterAndExpand" FontSize="15"/>
 
-                <Label Text="Visibilidade" HorizontalOptions="CenterAndExpand" FontSize="30" FontAttributes="Bold"/>
-                <Label Text="{Binding visibility}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                    <Label Text="Visibilidade" HorizontalOptions="CenterAndExpand" FontSize="30" FontAttributes="Bold"/>
+                    <Label Text="{Binding visibility}" HorizontalOptions="CenterAndExpand" FontSize="15"/>
 
-                <Label Text="Velocidade do Vento" HorizontalOptions="CenterAndExpand" FontSize="30" FontAttributes="Bold"/>
-                <Label Text="{Binding windSpeed}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                    <Label Text="Velocidade do Vento" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="{Binding windSpeed}" HorizontalOptions="CenterAndExpand" FontSize="15"/>
 
-                <Label Text="Temperatura Mínima e Máxima" HorizontalOptions="CenterAndExpand" FontSize="30" FontAttributes="Bold"/>
-                <Label Text="{Binding temp_min}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
-                <Label Text="{Binding temp_max}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                    <Label Text="Temperatura Mínima e Máxima" HorizontalOptions="CenterAndExpand" FontSize="30" FontAttributes="Bold"/>
+                    <Label Text="{Binding temp_min}" HorizontalOptions="CenterAndExpand" FontSize="15"/>
+                    <Label Text="{Binding temp_max}" HorizontalOptions="CenterAndExpand" FontSize="15"/>
 
-                <Label Text="Nascer e Por do Sol" HorizontalOptions="CenterAndExpand" FontSize="30" FontAttributes="Bold"/>
-                <Label Text="{Binding sunrise, StringFormat='{0:HH:mm}'}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
-                <Label Text="{Binding sunset, StringFormat='{0:HH:mm}'}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                    <Label Text="Nascer e Por do Sol" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="{Binding sunrise, StringFormat='{0:HH:mm}'}" HorizontalOptions="CenterAndExpand" FontSize="15"/>
+                    <Label Text="{Binding sunset, StringFormat='{0:HH:mm}'}" HorizontalOptions="CenterAndExpand" FontSize="15"/>
 
-
-            </StackLayout>
+                    <WebView x:Name="windyMap" HeightRequest="500"/>
+                </StackLayout>
             </ScrollView>
-            
+        
 
         </Frame>
 
